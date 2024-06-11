@@ -1,0 +1,24 @@
+access-token:
+  private: access-refresh-token-keys/access-token-private.key
+  public: access-refresh-token-keys/access-token-public.key
+refresh-token:
+  private: access-refresh-token-keys/refresh-token-private.key
+  public: access-refresh-token-keys/refresh-token-public.key
+server:
+  port: 9092
+spring:
+  profiles:
+    active: dev
+  application:
+    name: O-Auth
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    password: root
+    url: jdbc:postgresql://localhost:5432/oauth2
+    username: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
